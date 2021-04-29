@@ -23,7 +23,7 @@
         <Insets top="125"/>
     </padding>
     <Button text="Start" prefWidth="100" GridPane.rowIndex="3" GridPane.columnIndex="1"
-    GridPane.halignment="RIGHT" />
-    <Button text="Quit" prefWidth="100" GridPane.rowIndex="3" GridPane.columnIndex="2" onAction="#onButtonClicked"/>
+    GridPane.halignment="RIGHT" onAction="#onButtonClicked"/>
+    <Button text="Quit" prefWidth="100" GridPane.rowIndex="3" GridPane.columnIndex="2" onAction="#offButtonClicked"/>
 
 </GridPane>
