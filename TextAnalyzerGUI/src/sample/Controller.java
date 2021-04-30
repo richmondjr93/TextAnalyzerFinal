@@ -12,23 +12,35 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.stream.Collectors;
 import java.io.InputStreamReader;
-
+/**
+ * This class includes the main text analyzer
+ *
+ * @author James Richmond
+ */
 public class Controller {
 
     public class UniqueWord implements Comparable<UniqueWord>
     {
         public String word;
         public int count;
-
+        /**
+         * This is a constructor
+         * @param word stores unique word
+         * @param count stores word count
+         */
         public UniqueWord(String word, int count)
         {
             this.word = word;
             this.count = count;
         }
+        /**
+         * This is method to compares count to another word's count
+         * @param otherWord other word to have its count compared
+         * @return diff between counts
+         */
+        public int compareTo(UniqueWord otherWord) {
 
-        public int compareTo(UniqueWord compareFruit) {
-
-            int compareQuantity = ((UniqueWord) compareFruit).count;
+            int compareQuantity = ((UniqueWord) otherWord).count;
 
             return compareQuantity - this.count;
         }
@@ -37,10 +49,18 @@ public class Controller {
     static Controller classRef;
 
     static HashMap<String, Integer> allUniqueWords;
+    /**
+     * method closes the app
+     * @return nothing
+     */
     public Void offButtonClicked(){
         System.exit(0);
         return null;
     }
+    /**
+     * This method runs the analyzer
+     * @return nothing
+     */
     public Void onButtonClicked(){
 
         try {
@@ -143,6 +163,11 @@ public class Controller {
         }
         return null;
     }
+    /**
+     * Method to get count of specific word
+     * @param word specific word
+     * @return count
+     */
     public static int GetWordCount(String word)
     {
         return allUniqueWords.get(word);
